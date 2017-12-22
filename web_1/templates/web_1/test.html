@@ -1,4 +1,6 @@
+{% load cache %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -7,6 +9,8 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/font-awesome.css">
     <link rel="stylesheet" href="/static/css/chosen.css">
+    <!--定时刷新页面-->
+    <meta http-equiv="refresh" content="19">
 
     <style>
 
@@ -85,7 +89,41 @@
 
 
         </select>
+    </div><br/>
+
+    <h3>后台的测试</h3>
+    {{ ctime }}
+    <div>
+        {% for message in message_list %}
+            {{ message.user }}
+        {% endfor %}
     </div>
+
+
+    <h3>局部页面的视图缓存</h3>
+    <div class="form-control">{{ ctime }}</div>
+    <div class="form-control">
+        {% cache 10 'aaa' %}
+            {{ ctime }}
+        {% endcache %}
+    </div>
+
+    <h3>跑马灯效果</h3>
+    <marquee  direction=""> 这是普通滚动哦</marquee>
+    <marquee behavior="slide" direction="">这是滑动哦</marquee>
+    <marquee behavior=scroll direction="">这是预预设卷动哦</marquee>
+    <marquee behavior=alternate direction="">这是来回卷动哦</marquee>
+    <marquee behavior="" direction="down">这是向下卷动哦</marquee>
+    <marquee behavior="" direction="right">这是向右卷动哦</marquee>
+    <marquee behavior="" direction="left">这是向左卷动哦</marquee>
+    <!--scrollamount是每次滚动时移动的长度-->
+    <marquee behavior="" bgcolor="red" scrollamount="20">这是hong se卷动哦</marquee>
+    <marquee direction="down" width="250" height="200" behavior="alternate" style="border:solid">
+      <marquee behavior="alternate">
+        This text will bounce
+      </marquee>
+    </marquee>
+
 
 
 </body>

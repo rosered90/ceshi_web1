@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
+import time
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.template import RequestContext
-import json
-from django import forms
+
+from .models import message
+from django.views.decorators.cache import cache_page
 
 
 # Create your views here.
+
 
 
 def web_list(request):
@@ -16,6 +19,7 @@ def web_list(request):
 	:return:
 	"""
 	return render_to_response('web_1/index.html', locals(), context_instance=RequestContext(request))
+
 
 
 def dot_float(request):
@@ -53,7 +57,10 @@ def ajax_username(request):
 	return HttpResponse(u'姓名：' + username + u'<br/>内容：' + content)
 
 
+# @cache_page(10) #单独视图缓存
 def test(request):
+	message_list = message.objects.all()
+	ctime = time.time()
 	return render_to_response('web_1/test.html', locals(), context_instance=RequestContext(request))
 
 
@@ -73,4 +80,5 @@ def shopping(request):
 	return render_to_response('web_1/shopping.html', locals(), context_instance=RequestContext(request))
 
 def vue_ceshi(request):
+
 	return render_to_response('web_1/vue_ceshi.html', locals(), context_instance=RequestContext(request))
