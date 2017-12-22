@@ -3,9 +3,10 @@ html,body{
 }
 
 #header{
-	height:8%;
+	height:7%;
 	border:1px solid #AAAAAA;
 	margin: auto;
 	background:#3B5998;
-	padding:2% 0 0 0 ;
+	padding:0 0 0 0 ;
+	position: relative;
 }
