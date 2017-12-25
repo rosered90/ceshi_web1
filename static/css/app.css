@@ -3,7 +3,7 @@
 
 .slider, .slider .slider-img {
     overflow: hidden;
-    height: 460px;
+    height: 300px;
 }
 .slider {
     width: 1200px;
@@ -29,7 +29,7 @@
 }
 .slider .slider-img .slider-img-ul li img {
     width: 1200px;
-    height: 460px;
+    height: 300px;
 }
 .slider .slider-dot ul {
     position: absolute;

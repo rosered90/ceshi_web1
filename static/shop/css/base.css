@@ -86,7 +86,7 @@ html{
 	border:1px solid #AAAAAA;
 	width:26%;
 	float:left;
-	margin-left:1%;
+	margin-left:0.5%;
 }
 
 /*右侧样式*/
@@ -95,7 +95,7 @@ html{
 	border:1px solid #AAAAAA;
 	width: 70%;
 	float:right;
-	margin-right: 1%;
+	margin-right: 0.5%;
 }
 
 .global_module{

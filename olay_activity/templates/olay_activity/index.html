@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>Olay</title>
+    <link rel="stylesheet" href="/static/olay_activity/css/olay_base.css">
+    <script>
+		var ele = document.getElementsByTagName("html")[0],
+				size = ele.offsetWidth / 640 * 40;
+		ele.style.fontSize = size + "px"
+	</script>
+<body style="height: 100%;">
+<header style="height: 20%;">
+    <div class="header_div">
+        <img src="/static/olay_activity/images/olay_brand_logo_95x88.png" style="width: 10%;" alt="">
+        <div class="nav" style="width:100%;">
+            <ul class="nav_ul">
+                <li><a href="{% url 'olay_package' %}">Olay水乳套餐</a></li>
+                <li><a href="">Olay沐浴</a></li>
+                <li><a href="">Olay护肤</a></li>
+                <li><a href="">Olay彩妆</a></li>
+            </ul>
+        </div>
+    </div>
+
+</header>
+
+<div class="content">
+    <div class="rings_div" align="center">
+        <span class="detail">点击下方，更多活动详情</span>
+        <a href="{% url 'olay_index' %}"><img src="/static/olay_activity/images/rings-black-20fps-64c.gif" alt="" style="width:40%;" ></a>
+    </div>
+
+</div>
+</body>
+</html>

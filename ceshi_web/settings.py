@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'web_1',
     'caitong_security',
     'shop',
+    'olay_activity',
 )
 
 MIDDLEWARE_CLASSES = (

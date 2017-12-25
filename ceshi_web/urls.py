@@ -14,4 +14,5 @@ urlpatterns = patterns('',
     # url(r'^login/', views.login),
     url(r'^caitong/', include('caitong_security.urls')),
     url(r'^shop/', include('shop.urls')),
+    url(r'^olay/',include('olay_activity.urls')),
 )
