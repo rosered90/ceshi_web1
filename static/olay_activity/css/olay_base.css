@@ -45,12 +45,12 @@ body{
 }
 .nav_ul a{
     color:white;
-    font-size: 0.2rem;
+    font-size: 0.3rem;
 }
 
-a:hover {
+.nav_ul a:hover {
     color:cornflowerblue;
-    box-shadow: inset 1px 1px  white;
+    /*box-shadow: inset 1px 1px  white;*/
 }
 
 /*内容*/
@@ -84,16 +84,18 @@ a:hover {
 
 .right{
     position: relative;
-    width:62%;
+    width:70%;
     height:100%;
     float: right;
     top:-100%;
     /*border:solid 1px red;*/
 }
 
+
+
 .product_package{
     position:relative;
-    top:20%;
+    top:26%;
     display: inline-block;
     /*border:solid 1px red;*/
     width: 30%;
@@ -104,12 +106,15 @@ a:hover {
 .product_package p{
     font-size: 0.25rem;
     text-align: center;
+    position: relative;
+    top:25%;
 }
 
 .product_package img{
-    border-radius: 50%;
+    width: 50%;
+    border-radius: 70%;
     position: relative;
-    top:25%;
+    top:35%;
 }
 
 /*Olay主场*/
@@ -117,7 +122,7 @@ a:hover {
     position: absolute;
     width:5%;
     top:-3%;
-    left:20%;
+    left:15%;
 }
 
 .header_index{
@@ -125,22 +130,131 @@ a:hover {
     width:100%;
     padding-top:3%;
     background-color: black;
+    /*height:20%;*/
+
 }
 
 .content_index{
-    width: 100%;
-    height: 68%;
-    /*border:solid 1px red;*/
-    background:url(../images/bg1.jpg) center no-repeat;
-    background-size: 100%;
+    position:relative;
     margin-top: 1%;
+    width: 100%;
+    height: 69%;
+    /*border:solid 1px red;*/
+    background-size: 100%;
 }
 
-.content_col{
+.content_col1{
     /*border:solid 1px red;*/
-    float: left;
-    width:45%;
-    margin-top:2%;
-    margin-left:2%;
+    position: absolute;
+    left:2%;
+    width:47%;
+    bottom:8%;
 }
+
+.content_col2{
+    /*border:solid 1px red;*/
+    position: absolute;
+    right: 2%;
+    width:47%;
+    bottom:8%;
+}
+
+.olay_video{
+    width:95%;
+}
+
+/*圣诞活动*/
+.olay2_header{
+    height:20%;
+    width: 100%;
+    background-color: black;
+    position: relative;
+}
+
+.olay2_ul{
+    position: absolute;
+    width: 80%;
+    bottom:1%;
+    left:15%;
+}
+
+.olay2_ul ul{
+    padding:10px;
+    font-size:0;
+}
+
+.olay2_ul ul li{
+    display: inline-block;
+    margin-left:5%;
+    font-size: 0.4rem;
+    color:white;
+    align-items: center;
+    padding:2px 8px;
+    cursor: pointer;
+}
+
+.olay2_li_on {
+    position: relative;
+    background: #c3c8cd;
+    border-radius: 10%;
+    bottom:3px;
+}
+
+.olay2_content_all{
+    width: 100%;
+    height: 80%;
+
+}
+
+/*第一个活动布局*/
+.olay2_content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /*background-color: black;*/
+    /*border:solid 1px red;*/
+    /*margin-top:1%;*/
+}
+
+/*相同的活动页面的布局*/
+.olay2_same_activity{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    top:20%;
+    /*border:solid 1px red;*/
+}
+
+.olay2_content_left{
+    position: relative;
+    /*border:solid 1px red;*/
+    top:19%;
+    width:30%;
+    height: 81%;
+}
+
+.olay2_content_right{
+    /*border:solid 1px red;*/
+    width:68%;
+    position: absolute;
+    right:0;
+    top:30%;
+    height:70%;
+}
+
+.olay2_content_right p{
+    line-height: 0.4rem;
+}
+
+.olay2_buy{
+    position: absolute;
+    width:10%;
+    background: black;
+    border-radius: 15%;
+    /*margin-top: 2%;*/
+    margin-left: 5%;
+    bottom:9%;
+    cursor: pointer;
+}
+
 
