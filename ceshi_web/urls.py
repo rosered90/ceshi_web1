@@ -15,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^caitong/', include('caitong_security.urls')),
     url(r'^shop/', include('shop.urls')),
     url(r'^olay/',include('olay_activity.urls')),
+    url(r'^authority/',include('authority.urls')),
 )
