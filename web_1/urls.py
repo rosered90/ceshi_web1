@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^au/$', views.ajax_username, name="au"),
     url(r'^shop/$', views.shopping, name="shop"),
     url(r'^vue1/$', views.vue_ceshi, name="vue1"),
+    url(r'^img/$', views.loading_img, name="img"),
 
 )

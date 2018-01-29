@@ -46,3 +46,7 @@
 		        transform: rotateX(0deg) rotateZ(360deg);
 		    }
 		}
+
+.div_img img{
+	margin:3% 1%;
+}

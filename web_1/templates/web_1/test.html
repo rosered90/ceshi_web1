@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/font-awesome.css">
     <link rel="stylesheet" href="/static/css/chosen.css">
+    <link rel="stylesheet" href="/static/css/index.css">
     <!--定时刷新页面-->
-    <meta http-equiv="refresh" content="19">
+    <meta http-equiv="refresh" content="60">
 
     <style>
+        img {
+        display: block;
+        margin-bottom: 50px;
+        height: 200px;
+    }
 
         .div1{
             width:200px;
@@ -126,7 +132,23 @@
     <kbd>键盘文字</kbd>
     <BLINK>闪烁的文字</BLINK>
 
-
+    <br/>
+    <br/>
+<h1>图片预加载</h1>
+    <div class="div_img">
+    <img src="/static/images/loading.gif" data-src="/static/images/f1.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f1.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f1.jpg"><br/>
+    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f4.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg"><br/>
+    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
+    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
+</div>
 
 
 </body>
@@ -160,4 +182,29 @@
     });
 
 </script>
+ <script>
+     $(function () {
+
+     });
+        function lazyload1() {
+        var images = document.getElementsByTagName('img');
+        var len    = images.length;
+        var n      = 0;      //存储图片加载到的位置，避免每次都从第一张图片开始遍历
+        return function(){
+            var seeHeight = document.documentElement.clientHeight;
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            for(var i = n; i < len; i++) {
+                if(images[i].offsetTop < seeHeight + scrollTop) {
+                    if(images[i].getAttribute('src') === '/static/images/loading.gif') {
+                     images[i].src = images[i].getAttribute('data-src');
+                }
+                n = n + 1;
+                 }
+            }
+            }
+    }
+        var loadImages = lazyload1();
+        loadImages();          //初始化首页的页面图片
+        window.addEventListener('scroll', loadImages, false);
+    </script>
 </html>

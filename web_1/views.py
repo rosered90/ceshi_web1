@@ -25,6 +25,9 @@ def web_list(request):
 def dot_float(request):
 	return render_to_response('web_1/dot_float.html', locals(), context_instance=RequestContext(request))
 
+def loading_img(request):
+	return render_to_response('web_1/prepare_loading_img.html', locals(), context_instance=RequestContext(request))
+
 
 def js_test(request):
 	"""
