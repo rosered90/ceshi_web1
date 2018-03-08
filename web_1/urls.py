@@ -13,5 +13,7 @@ urlpatterns = patterns('',
     url(r'^shop/$', views.shopping, name="shop"),
     url(r'^vue1/$', views.vue_ceshi, name="vue1"),
     url(r'^img/$', views.loading_img, name="img"),
+    url(r'^echarts1/$', views.echarts_1, name="echarts_1"),
+
 
 )

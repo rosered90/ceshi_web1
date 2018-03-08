@@ -78,6 +78,9 @@ def add(request):
 def form_action(request):
 	return render_to_response('web_1/js_test.html', locals(), context_instance=RequestContext(request))
 
+def echarts_1(request):
+	return render_to_response('web_1/echarts_1.html', locals(), context_instance=RequestContext(request))
+
 
 def shopping(request):
 	return render_to_response('web_1/shopping.html', locals(), context_instance=RequestContext(request))

@@ -1,4 +1,4 @@
-{% load cache %}
+<!--{% load cache %}-->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/css/font-awesome.css">
     <link rel="stylesheet" href="/static/css/chosen.css">
     <link rel="stylesheet" href="/static/css/index.css">
+    <script src="/static/js/node_modules/echarts/dist/echarts.js"></script>
     <!--定时刷新页面-->
     <meta http-equiv="refresh" content="60">
 
@@ -29,7 +30,7 @@
             }
     </style>
 </head>
-<body>
+<body id="heatmapArea">
     <h3>input框的测试</h3>
     <div class="container">
         <div class="row">
@@ -83,7 +84,7 @@
 
     <h3>多选框</h3>
     <div class="col-sm-1">
-        <label {% comment %}class="form-label"{% endcomment %}>选择您所需要的权限</label>
+        <label >选择您所需要的权限</label>
     </div>
     <div class="col-sm-3">
         <!--select是多选框中最重要的一句，切记不要写错-->
@@ -138,22 +139,52 @@
     <div class="div_img">
     <img src="/static/images/loading.gif" data-src="/static/images/f1.jpg">
     <img src="/static/images/loading.gif" data-src="/static/images/f1.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f1.jpg"><br/>
-    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f4.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg"><br/>
-    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
-    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f1.jpg"><br/>#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg">#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f4.jpg">#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f2.jpg"><br/>#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">#}-->
+<!--{#    <img src="/static/images/loading.gif" data-src="/static/images/f3.jpg">#}-->
 </div>
+<!--准备一个具备大小的DOM-->
+<div id="main" style="width:600px;height:400px;"></div>
 
 
 </body>
     <script src="/static/js/jquery-1.11.0.min.js"></script>
     <script src="/static/js/chosen.jquery.js"></script>
+<script type="text/javascript">
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
 <script>
     //多选框的相应样式
     $(document).ready(function () {
